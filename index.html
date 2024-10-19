@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+  <meta charset="UTF-8"> <!-- Define a codificação de caracteres para UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para design responsivo -->
+  <title>/// StreamBeats ///</title> <!-- Define o título da página exibido na aba do navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS que estiliza a página -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Link para a biblioteca de ícones Material do Google -->
+</head>
+<body>
+  <div class="wrapper"> <!-- Contêiner principal para todo o conteúdo da página -->
+    
+    <!-- Barra superior do player -->
+    <div class="top-bar">
+      <i class="material-icons">expand_more</i> <!-- Ícone para expandir ou mostrar mais opções -->
+      <span>Streambeats//</span> <!-- Texto indicando a música que está sendo reproduzida -->
+      <i class="material-icons">more_horiz</i> <!-- Ícone para mais opções ou um menu -->
+    </div>
+
+    <!-- Área da imagem do álbum -->
+    <div class="img-area">
+      <img src="" alt=""> <!-- Elemento de imagem para a capa do álbum (src deve ser preenchido dinamicamente) -->
+    </div>
+
+    <!-- Detalhes da música atual -->
+    <div class="song-details">
+      <p class="name"></p> <!-- Parágrafo para exibir o nome da música -->
+      <p class="artist"></p> <!-- Parágrafo para exibir o nome do artista -->
+    </div>
+
+    <!-- Área de progresso da música -->
+    <div class="progress-area">
+      <div class="progress-bar">
+        <audio id="main-audio" src=""></audio> <!-- Elemento de áudio para reprodução da música (src deve ser preenchido dinamicamente) -->
+      </div>
+      <!-- Temporizador da música -->
+      <div class="song-timer">
+        <span class="current-time">0:00</span> <!-- Exibe o tempo atual da música -->
+        <span class="max-duration">0:00</span> <!-- Exibe a duração total da música -->
+      </div>
+    </div>
+
+    <!-- Controles do player de música -->
+    <div class="controls">
+      <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i> <!-- Ícone para repetir a lista de músicas -->
+      <i id="prev" class="material-icons">skip_previous</i> <!-- Ícone para pular para a música anterior -->
+      <div class="play-pause">
+        <i class="material-icons play">play_arrow</i> <!-- Ícone para iniciar ou pausar a reprodução da música -->
+      </div>
+      <i id="next" class="material-icons">skip_next</i> <!-- Ícone para pular para a próxima música -->
+      <i id="more-music" class="material-icons">queue_music</i> <!-- Ícone para mostrar a lista de músicas -->
+    </div>
+
+    <!-- Lista de músicas -->
+    <div class="music-list">
+      <div class="header">
+        <div class="row">
+          <i class="list material-icons">queue_music</i> <!-- Ícone para a lista de músicas -->
+          <span>Music list</span> <!-- Texto indicando a seção da lista de músicas -->
+        </div>
+        <i id="close" class="material-icons">close</i> <!-- Ícone para fechar a lista de músicas -->
+      </div>
+      <ul>
+        <!-- Os itens da lista de músicas serão inseridos aqui dinamicamente via JavaScript -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Inclusão dos arquivos JavaScript -->
+  <script src="js/music-list.js"></script> <!-- Arquivo JavaScript para manipulação da lista de músicas -->
+  <script src="js/script.js"></script> <!-- Arquivo JavaScript para funcionalidade geral do player de música -->
+
+</body>
+</html>

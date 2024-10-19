@@ -1,0 +1,228 @@
+/* Importa a fonte Poppins do Google Fonts com diferentes pesos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* Reseta margens e preenchimentos e define a caixa de modelagem para todos os elementos */
+* {
+  margin: 0; /* Remove a margem padrão de todos os elementos */
+  padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+  box-sizing: border-box; /* Inclui bordas e preenchimentos na largura e altura dos elementos */
+  font-family: "Poppins", sans-serif; /* Define a fonte padrão como Poppins; se não estiver disponível, usa uma fonte sans-serif genérica */
+}
+
+/* Reseta margens e preenchimentos dos pseudo-elementos antes e depois de todos os elementos */
+*::before, *::after {
+  padding: 0; /* Remove o preenchimento padrão dos pseudo-elementos */
+  margin: 0; /* Remove a margem padrão dos pseudo-elementos */
+}
+
+/* Define variáveis de cor para serem usadas no restante do CSS */
+:root {
+  --pink: #ff74a4; /* Variável para a cor rosa */
+  --violet: #9f6ea3; /* Variável para a cor violeta */
+  --lightblack: #515C6F; /* Variável para um tom de preto claro */
+  --white: #ffffff; /* Variável para a cor branca */
+  --darkwhite: #cecaca; /* Variável para um tom de branco escuro */
+  --pinkshadow: #ffcbdd; /* Variável para uma cor de sombra rosa */
+  --lightbshadow: rgba(0,0,0,0.15); /* Variável para uma sombra preta leve com opacidade de 15% */
+}
+
+/* Estiliza o corpo da página */
+body {
+  display: flex; /* Usa o Flexbox para o layout do corpo */
+  align-items: center; /* Alinha verticalmente o conteúdo no centro do corpo */
+  justify-content: center; /* Alinha horizontalmente o conteúdo no centro do corpo */
+  min-height: 100vh; /* Garante que o corpo ocupe no mínimo 100% da altura da viewport */
+  background: linear-gradient(var(--pink) 0%, var(--violet) 100%); /* Define um fundo com um gradiente linear de rosa para violeta */
+}
+
+/* Estiliza o contêiner principal do player */
+.wrapper {
+  width: 380px; /* Define a largura do contêiner como 380 pixels */
+  padding: 25px 30px; /* Adiciona um preenchimento interno de 25 pixels na parte superior e inferior, e 30 pixels nas laterais */
+  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse as bordas do contêiner */
+  position: relative; /* Define a posição como relativa para que elementos filhos com posição absoluta sejam posicionados em relação a este contêiner */
+  border-radius: 15px; /* Adiciona bordas arredondadas com um raio de 15 pixels */
+  background: var(--white); /* Define o fundo do contêiner com a cor branca (variável CSS) */
+  box-shadow: 0px 6px 15px var(--lightbshadow); /* Adiciona uma sombra ao contêiner com deslocamento vertical de 6 pixels e desfoque de 15 pixels usando a cor da variável `--lightbshadow` */
+}
+
+/* Estiliza os ícones dentro do contêiner `.wrapper` */
+.wrapper i {
+  cursor: pointer; /* Altera o cursor para uma mão ao passar sobre os ícones, indicando que são clicáveis */
+}
+
+/* Estiliza os elementos dentro das seções que usam flexbox para layout */
+.top-bar, .progress-area .song-timer, 
+.controls, .music-list .header, .music-list ul li {
+  display: flex; /* Usa o Flexbox para layout */
+  align-items: center; /* Alinha verticalmente os itens ao centro */
+  justify-content: space-between; /* Distribui o espaço entre os itens, alinhando-os nas extremidades do contêiner */
+}
+
+/* Estiliza os ícones na barra superior */
+.top-bar i {
+  font-size: 30px; /* Define o tamanho da fonte dos ícones para 30 pixels */
+  color: var(--lightblack); /* Define a cor dos ícones usando a variável CSS `--lightblack` */
+}
+
+/* Estiliza o primeiro ícone na barra superior para ajustar sua posição */
+.top-bar i:first-child {
+  margin-left: -7px; /* Adiciona uma margem negativa à esquerda do primeiro ícone, movendo-o para a esquerda */
+}
+
+/* Estiliza o texto na barra superior */
+.top-bar span {
+  font-size: 18px; /* Define o tamanho da fonte do texto para 18 pixels */
+  margin-left: -3px; /* Adiciona uma margem negativa à esquerda do texto, movendo-o ligeiramente para a esquerda */
+  color: var(--lightblack); /* Define a cor do texto usando a variável CSS `--lightblack` */
+}
+
+/* Estiliza a área da imagem do álbum */
+.img-area {
+  width: 100%; /* Define a largura da área da imagem como 100% da largura do contêiner pai */
+  height: 256px; /* Define a altura da área da imagem como 256 pixels */
+  overflow: hidden; /* Oculta qualquer parte da imagem que ultrapasse as bordas da área */
+  margin-top: 25px; /* Adiciona uma margem superior de 25 pixels */
+  border-radius: 15px; /* Adiciona bordas arredondadas com um raio de 15 pixels */
+  box-shadow: 0px 6px 12px var(--lightbshadow); /* Adiciona uma sombra com deslocamento vertical de 6 pixels e desfoque de 12 pixels usando a cor da variável `--lightbshadow` */
+}
+
+/* Estiliza a imagem dentro da área da imagem do álbum */
+.img-area img {
+  width: 100%; /* Define a largura da imagem como 100% da largura da área pai */
+  height: 100%; /* Define a altura da imagem como 100% da altura da área pai */
+ object-fit: cover; /* Ajusta a imagem para cobrir toda a área sem distorção, cortando a imagem se necessário */
+}
+
+/* Estiliza os detalhes da musica*/
+.song-details{
+    text-align: center;
+    margin: 30px 0;
+}
+
+/*Estiliza os paragrafos de detalhes da música*/
+.song-details p{
+  color: var(--lightblack);
+}
+
+/*Estiliza os páragrafos de detalhes da música*/
+.song-details .name{
+  font-size:21px;
+}
+
+/* Estiliza o nome do artista dentro da seção detalhes*/
+.song-details .artist{
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 35px;
+}
+
+/* Estiliza a area de progresso da musica*/
+.progress-area{
+  height: 6px;
+  width: 100%;
+  border-radius: 50px;
+  background:#f0f0f0;
+  cursor: pointer;
+}
+/* Estiliza a barra de progresso dentro da area de progresso*/
+
+.progress-area .progress-bar{
+  height: inherit;
+  width: 0%;
+  position: relative;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--pink) 0%, var(--violet)100%);
+  }
+
+  /* Estiliza o indicador na barra de progresso*/
+  .progress-bar::before{
+  content:"";
+  position: absolute;
+  height: 15px;
+  width: 12px;
+  border-radius: 50%;
+  top: 50%;
+  right: -5px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  background: inherit;
+  transition: opacity 0.2s ease;
+  }
+ /*Torna o indicador visivel quando a area de progresso é alvo d hover*/
+  .progress-area:hover .progress-bar::before{
+    opacity: 1;
+    pointer-events: auto;
+  } 
+
+  /* adiciona uma margem superior a area dp temp.da musica*/
+  .progress-area .song-timer{
+    margin-top: 2px;
+  }
+
+/*Estiliza os span dentro da area do temporizador da musica*/
+.song-timer span{
+  font-size: 13px;
+  color: var(--lightblack);
+}
+/* estiliza os controles do player*/
+.controls{
+  margin: 40px 0 5px 0;
+}
+/* estiliza os icones dentro da seção controles*/
+.controls i{
+  font-size: 28px;
+  user-select: none;
+  background: linear-gradient(var(--pink)0%, var(--violet)100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Estiliza o segundo e o quarto icone dentro da seção de controles*/
+.controls i:nth-child(2),
+.controls i:nth-child(4){
+  font-size: 43px;
+}
+/*Ajusta a margem direita do icone de pular para a musica anterior*/
+.controls #prev{
+  margin-right: -13px;
+}
+/* Ajusta a margem esquerda do icone de pular para a proxima musica*/
+.controls #next{
+  margin-left: -13px;
+}
+/*Estiliza o conteiner para o botão player / pausa */
+.controls .play-pause{
+  height: 54px;
+  width: 54px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(var(--white) 0%, var(--darkwhite) 100%);
+  box-shadow: 0px 0px 45px var(--pink);
+}
+/* estiliza o pseudo-elemento ::before" do botão pausa*/
+.play-pause::before{
+  position: absolute;
+  content: "";
+  height: 43px;
+  width: 43px;
+  border-radius: inherit;
+  background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+}
+/* estiliza o icone dentro do botão play-pause*/
+.play-pause i{
+  height: 43px;
+  width: 43px;
+  line-height: 43px;
+  text-align: center;
+  background: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+}
